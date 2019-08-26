@@ -1,13 +1,17 @@
 
 import torchaudio
 import numpy as np
-from torchaudio import transforms
+import librosa
+from librosa import feature
 
 class MFCCExtractor():
 
+    def __init__(self):
+        print("No. of features: 14")
+
     def extract_features(self, file_name):
     
-        audio, sample_rate = torchaudio.load(file_name) 
-        mfccs = transforms.MFCC(sample_rate=sample_rate, n_mfcc=40)(audio)
-        mfccsscaled = np.mean(mfccs.detach().numpy(), axis=0)    
-        return mfccsscaled
+        audio, sample_rate = librosa.load(file_name) 
+        mfccs = feature.mfcc(y=audio, sr=sample_rate, n_mfcc=14)
+        mfccsscaled = np.mean(mfccs.T, axis=0)    
+        return mfccsscaled.tolist()
