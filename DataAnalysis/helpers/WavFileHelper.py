@@ -2,7 +2,7 @@
 import struct
 
 class WavFileHelper():
-    
+
     def read_file_properties(self, filename):
 
         wave_file = open(filename,"rb")
