@@ -12,5 +12,5 @@ class MFCCExtractor():
     def extract_features(self, file_name):
     
         audio, sample_rate = librosa.load(file_name) 
-        mfccs = feature.mfcc(y=audio, sr=sample_rate/100, n_mfcc=14)
+        mfccs = feature.mfcc(y=audio, sr=sample_rate, n_mfcc=40)
         return mfccs.T
