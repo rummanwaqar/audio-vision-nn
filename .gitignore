@@ -2,3 +2,4 @@ SONYC
 DataAnalysis/.ipynb_checkpoints/AudioFeatureExtraction-checkpoint.ipynb
 UrbanSound8K/*
 UrbanSound8K.tar.gz
+DataAnalysis/*.csv
